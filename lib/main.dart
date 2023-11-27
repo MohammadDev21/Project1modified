@@ -37,7 +37,7 @@ class _CurrencyConverterState extends State<CurrencyConverter>
     // Animation setup
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(seconds: 2),
     );
 
     _animation = Tween<double>(begin: 0, end: 1).animate(_controller);
@@ -101,10 +101,7 @@ class _CurrencyConverterState extends State<CurrencyConverter>
               opacity: _animation,
               child: const Text(
                 "<<<<<WE ONLY CONVERT DOLLARS TO LBP, EUR, GPB>>>>>",
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 25,
-                ),
+                style: TextStyle(color: Colors.red),
               ),
             ),
             const SizedBox(height: 40),
@@ -150,7 +147,7 @@ class _CurrencyConverterState extends State<CurrencyConverter>
               onPressed: () {
                 setState(() {
                   if (selectedCurrency == "GBP") {
-                    result = amount * 1.5;
+                    result = amount * 0.79;
                   } else if (selectedCurrency == "EUR") {
                     result = amount * 0.85;
                   } else {
